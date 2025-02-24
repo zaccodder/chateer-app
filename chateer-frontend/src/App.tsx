@@ -1,13 +1,22 @@
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { useAuth } from "./hooks/useAuth";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Chat from "./pages/Chat";
+import Navbar from "./components/Navbar";
+
 const App = () => {
+  const { user } = useAuth(); // Ensure this hook correctly provides `user`
+
   return (
-    <div className='h-screen flex flex-col justify-center items-center'>
-      <h1 className='text-4xl'>Chateer</h1>
-      <h2 className='text-2xl'>Chat with your friends</h2>
-      <p className='text-lg'>Sign in to start chatting</p>
-      <button className='btn btn-active btn-lg btn-ghost btn-accent'>
-        Hello from Chateer
-      </button>
-    </div>
+     <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/chat" element={user ? <Chat /> : <Navigate to="/login" replace />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
   );
 };
 
