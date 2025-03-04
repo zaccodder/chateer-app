@@ -1,0 +1,34 @@
+###
+POST http://localhost:3001/api/v1/auth/sign-up
+Content-Type: application/json
+
+{
+    "username": "Muhammad Bashir Ibrahim",
+    "email": "mbashiribrahim6578739@gmail.com",
+    "password": "123456"
+}
+
+###
+POST http://localhost:3001/api/v1/auth/log-in
+Content-Type: application/json
+
+{
+    "email": "mbashiribrahim6578739@gmail.com",
+    "password": "123456"
+}
+
+###
+GET  http://localhost:3001/api/v1/messages/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1iYXNoaXJpYnJhaGltNjU3ODczOUBnbWFpbC5jb20iLCJpZCI6IjY3YmViMjBiZjE3ZDg2OTM5OGVkZmUxMSIsInVzZXJuYW1lIjoiTXVoYW1tYWQgQmFzaGlyIElicmFoaW0iLCJpYXQiOjE3NDA2MzkzNjcsImV4cCI6MTc0MTI0NDE2N30.FObn4md43_UVPSqD3GUCXVzJYZNv5cCnlDKLQU-RUJs
+###
+POST http://localhost:3001/api/v1/messages/67bdb3fc4f802330e85f3238
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1iYXNoaXJpYnJhaGltNjU3ODczOUBnbWFpbC5jb20iLCJpZCI6IjY3YmViMjBiZjE3ZDg2OTM5OGVkZmUxMSIsInVzZXJuYW1lIjoiTXVoYW1tYWQgQmFzaGlyIElicmFoaW0iLCJpYXQiOjE3NDA2MzkzNjcsImV4cCI6MTc0MTI0NDE2N30.FObn4md43_UVPSqD3GUCXVzJYZNv5cCnlDKLQU-RUJs
+Content-Type: application/json
+
+{
+    "content": "Hello, How are you doing?"
+}
+
+###
+GET http://localhost:3001/api/v1/messages/67bdb3fc4f802330e85f3238
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1iYXNoaXJpYnJhaGltNjU3ODczOUBnbWFpbC5jb20iLCJpZCI6IjY3YmViMjBiZjE3ZDg2OTM5OGVkZmUxMSIsInVzZXJuYW1lIjoiTXVoYW1tYWQgQmFzaGlyIElicmFoaW0iLCJpYXQiOjE3NDA2MzkzNjcsImV4cCI6MTc0MTI0NDE2N30.FObn4md43_UVPSqD3GUCXVzJYZNv5cCnlDKLQU-RUJs
