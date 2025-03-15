@@ -10,10 +10,10 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Login />} />
+      <Route path="singleuser" element={<SingleUser />} />
       <Route path="chatroom" element={<ChatRoom />} />
       <Route path="uploadfile" element={<UploadFile />} />
       <Route path="chatgroup" element={<ChatGroup />} />
-      <Route path="singleuser" element={<SingleUser />} />
     </Route>
   )
 );

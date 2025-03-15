@@ -17,7 +17,7 @@ export default function SingleUser() {
   return (
     <div className="flex flex-col mt-20 h-[75vh] max-w-lg mx-auto p-4 rounded-lg shadow-md">
       <div className="flex items-center gap-5 mb-10">
-        <Link to="/"><IoIosArrowBack className="text-2xl"/></Link>
+        <Link to="/chatroom"><IoIosArrowBack className="text-2xl"/></Link>
       <UserProfile />
       </div>
 
