@@ -10,7 +10,7 @@ function ChatRoom() {
   });
 
   // Simulated list of users
-  const users = Array.from({ length: 5 }, (_, index) => ({
+  const users = Array.from({ length: 20 }, (_, index) => ({
     id: index + 1,
     onlineTime: currentTime,
   }));
