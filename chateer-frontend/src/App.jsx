@@ -45,13 +45,15 @@ import UploadFile from './pages/UploadFile';
 import ChatRoom from './pages/ChatRoom';
 import ChatGroup from './pages/ChatGroup';
 import SingleUser from './pages/SingleUser';
+import Login from './pages/Login';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
-      <Route index element={<ChatRoom />} />
+      <Route index element={<Login />} />
+      <Route path="singleuser" element={<SingleUser />} />
+      <Route path="chatroom" element={<ChatRoom />} />
       <Route path="uploadfile" element={<UploadFile />} />
       <Route path="chatgroup" element={<ChatGroup />} />
-      <Route path="singleuser" element={<SingleUser />} />
     </Route>
   )
 );
