@@ -10,7 +10,7 @@ function ChatRoom() {
   });
 
   // Simulated list of users
-  const users = Array.from({ length: 5 }, (_, index) => ({
+  const users = Array.from({ length: 20 }, (_, index) => ({
     id: index + 1,
     onlineTime: currentTime,
   }));
@@ -20,7 +20,7 @@ function ChatRoom() {
 
       <div className="bg-gray-200 w-full p-3 flex flex-col gap-5 h-full min-h-0 overflow-y-auto pb-10">
         {users.map((user) => (
-          <Link to="singleuser" key={user.id}>
+          <Link to="/singleuser" key={user.id}>
             <UserProfile onlineTime={user.onlineTime} />
           </Link>
         ))}
