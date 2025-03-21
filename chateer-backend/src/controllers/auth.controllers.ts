@@ -98,7 +98,7 @@ export const updateProfile = async (
     const user = await User.findByIdAndUpdate(
       userId,
       { profilePic: updatedProfilePic },
-      { new: true }
+      { new: true, runValidators: true, context: 'query' }
     );
     res.status(200).json(user);
   } catch (error: unknown) {

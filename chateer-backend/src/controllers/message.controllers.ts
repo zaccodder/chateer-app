@@ -17,7 +17,7 @@ export const sendMessage = async (
   next: NextFunction
 ): Promise<void> => {
   try {
-    const { receiverId } = req.params;
+    const receiverId = req.params.id;
     const senderId = req.user?.id;
 
     if (!senderId) {
@@ -64,7 +64,7 @@ export const getMessages = async (
   next: NextFunction
 ): Promise<void> => {
   try {
-    const { receiverId } = req.params;
+    const receiverId = req.params.id;
     const senderId = req.user?.id;
 
     if (!senderId) {
@@ -74,8 +74,8 @@ export const getMessages = async (
 
     const messages = await Message.find({
       $or: [
-        { sender: senderId, receiver: receiverId },
-        { sender: receiverId, receiver: senderId },
+        { senderId: senderId, receiverId: receiverId },
+        { senderId: receiverId, receiverId: senderId },
       ],
     }).populate('sender receiver', 'username email');
 
