@@ -1,12 +1,12 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IUser extends Document {
-  id: mongoose.Types.ObjectId;
+  id: mongoose.Schema.Types.ObjectId;
   username: string;
   email: string;
   password: string;
-  sentMessages: mongoose.Types.ObjectId[]; // Array of sent messages
-  receivedMessages: mongoose.Types.ObjectId[]; // Array of received messages
+  sentMessages: mongoose.Schema.Types.ObjectId[]; // Array of sent messages
+  receivedMessages: mongoose.Schema.Types.ObjectId[]; // Array of received messages
   profilePic: string;
   createdAt: Date;
   updatedAt: Date;

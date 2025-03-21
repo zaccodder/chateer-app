@@ -8,8 +8,8 @@ import { authMiddleware } from '../middlewares/auth.middleware';
 
 const router = express.Router();
 
-router.post('/:receiverId', authMiddleware, sendMessage);
-router.get('/:receiverId', authMiddleware, getMessages);
+router.post('/send/:id', authMiddleware, sendMessage);
+router.get('/:id', authMiddleware, getMessages);
 router.get('/users', authMiddleware, getUsersForSidebar);
 
 export default router;
