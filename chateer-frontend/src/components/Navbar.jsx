@@ -9,8 +9,8 @@ function Navbar() {
     <footer>
       <nav className="fixed bottom-0 left-0 w-full bg-gray-200 flex justify-around p-4 text-3xl shadow-md">
         <Link to="uploadfile"><LuPlus /></Link>
-        <Link to="/"><IoChatbubbleOutline /></Link>
-        <Link to="/chatgroup"><RiGroupLine /></Link>
+        <Link to="chatroom"><IoChatbubbleOutline /></Link>
+        <Link to="chatgroup"><RiGroupLine /></Link>
       </nav>
     </footer>
   );
