@@ -32,8 +32,8 @@ const App = () => {
 
   if (isCheckingAuth && !authUser)
     return (
-      <div className="flex items-center justify-center h-screen">
-        <Loader className="size-10 animate-spin" />
+      <div className='flex items-center justify-center h-screen'>
+        <Loader className='size-10 animate-spin' />
       </div>
     );
 
@@ -43,27 +43,27 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route
-            path="/"
-            element={authUser ? <HomePage /> : <Navigate to="/login" />}
+            path='/'
+            element={authUser ? <HomePage /> : <Navigate to='/login' />}
           />
           <Route
-            path="/signup"
-            element={!authUser ? <SignUpPage /> : <Navigate to="/" />}
+            path='/signup'
+            element={!authUser ? <SignUpPage /> : <Navigate to='/' />}
           />
           <Route
-            path="/login"
-            element={!authUser ? <LoginPage /> : <Navigate to="/" />}
+            path='/login'
+            element={!authUser ? <LoginPage /> : <Navigate to='/' />}
           />
-          <Route path="/settings" element={<SettingsPage />} />
+          <Route path='/settings' element={<SettingsPage />} />
           <Route
-            path="/profile"
-            element={authUser ? <ProfilePage /> : <Navigate to="/login" />}
+            path='/profile'
+            element={authUser ? <ProfilePage /> : <Navigate to='/login' />}
           />
-          <Route path="/chat" element={<Layout />}>
+          <Route path='/chat' element={<Layout />}>
             <Route index element={<ChatRoom />} />
-            <Route path="uploadfile" element={<UploadFile />} />
-            <Route path="chatgroup" element={<ChatGroup />} />
-            <Route path="singleuser" element={<SingleUser />} />
+            <Route path='uploadfile' element={<UploadFile />} />
+            <Route path='chatgroup' element={<ChatGroup />} />
+            <Route path='singleuser' element={<SingleUser />} />
           </Route>
         </Routes>
         <Toaster />
@@ -71,27 +71,20 @@ const App = () => {
     </div>
   );
 };
-import React from 'react';
 import {
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
-  Route,
 } from 'react-router-dom';
-import Layout from './components/Layout';
-import UploadFile from './pages/UploadFile';
-import ChatRoom from './pages/ChatRoom';
-import ChatGroup from './pages/ChatGroup';
-import SingleUser from './pages/SingleUser';
 import Login from './pages/Login';
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Layout />}>
+    <Route path='/' element={<Layout />}>
       <Route index element={<Login />} />
-      <Route path="singleuser" element={<SingleUser />} />
-      <Route path="chatroom" element={<ChatRoom />} />
-      <Route path="uploadfile" element={<UploadFile />} />
-      <Route path="chatgroup" element={<ChatGroup />} />
+      <Route path='singleuser' element={<SingleUser />} />
+      <Route path='chatroom' element={<ChatRoom />} />
+      <Route path='uploadfile' element={<UploadFile />} />
+      <Route path='chatgroup' element={<ChatGroup />} />
     </Route>
   )
 );
