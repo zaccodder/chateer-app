@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Document } from 'mongoose';
 
 export interface IMessage extends Document {
   senderId: mongoose.Types.ObjectId; // Reference to the sender
@@ -8,7 +8,7 @@ export interface IMessage extends Document {
   createdAt: Date;
 }
 
-const MessageSchema = new Schema<IMessage>(
+const MessageSchema = new mongoose.Schema<IMessage>(
   {
     senderId: {
       type: mongoose.Schema.Types.ObjectId,
@@ -26,4 +26,5 @@ const MessageSchema = new Schema<IMessage>(
   { timestamps: true }
 );
 
-export default mongoose.model<IMessage>('Message', MessageSchema);
+const Message = mongoose.model<IMessage>('Message', MessageSchema);
+export default Message;

@@ -5,10 +5,10 @@ import jwt from 'jsonwebtoken';
 import { JWT_SECRET } from '../config/config';
 
 export const registerUser = async (userData: RegisterInput) => {
-  const { username, email, password } = userData;
+  const { name, username, email, password } = userData;
   const hashedPassword = await bcrypt.hash(password, 10);
 
-  const newUser = new User({ username, email, password: hashedPassword });
+  const newUser = new User({ name, username, email, password: hashedPassword });
 
   await newUser.save();
 

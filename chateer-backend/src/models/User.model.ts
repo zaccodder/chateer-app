@@ -2,6 +2,7 @@ import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IUser extends Document {
   id: mongoose.Schema.Types.ObjectId;
+  name: string;
   username: string;
   email: string;
   password: string;
@@ -14,6 +15,7 @@ export interface IUser extends Document {
 
 const UserSchema = new Schema<IUser>(
   {
+    name: { type: String, required: true },
     username: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
@@ -39,4 +41,5 @@ mongoose.set('toJSON', {
   },
 });
 
-export default mongoose.model<IUser>('User', UserSchema);
+const User = mongoose.model<IUser>('User', UserSchema);
+export default User;
